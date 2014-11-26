@@ -7,7 +7,7 @@ function getRelationship(x, y) {
 }
 
 function isNumber(x) {
-  return typeof x === 'number';
+  return typeof x === 'number' && !isNaN(x);
 }
 
 function getFailString(x, y) {
