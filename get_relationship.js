@@ -12,8 +12,8 @@ function isNumber(x) {
 
 function getFailString(x, y) {
   //"Can't compare relationships because [this value] and [that value] [is]/[are] not [a] number[s]."
-  output = "Can't compare relationships because ";
-  count = 0;
+  var output = "Can't compare relationships because ";
+  var count = 0;
   if (!isNumber(x)) {
     count++;
     output += x;
