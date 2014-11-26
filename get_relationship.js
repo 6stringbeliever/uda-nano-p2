@@ -11,8 +11,7 @@ function isNumber(x) {
 }
 
 function getFailString(x, y) {
-  //"Can't compare relationships because [this value] and [that value] [is]/[are] not [a] number[s]."
-  var output = "Can't compare relationships because ";
+  var output = 'Can\'t compare relationships because ';
   var count = 0;
   if (!isNumber(x)) {
     count++;
@@ -21,24 +20,20 @@ function getFailString(x, y) {
   if (!isNumber(y)) {
     count++;
     if (count == 2) {
-      output += " and ";
+      output += ' and ';
     }
     output += y;
   }
-  if (count == 1) {
-    output += " is not a number";
-  } else {
-    output += " are not numbers";
-  }
+  output += count == 1 ? ' is not a number.' : ' are not numbers.';
   return output;
 }
 
 function getComparisonString(x, y) {
   if (x == y) {
-    return "=";
+    return '=';
   } else if (x > y) {
-    return ">";
+    return '>';
   } else {
-    return "<";
+    return '<';
   }
 }
