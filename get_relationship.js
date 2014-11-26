@@ -15,14 +15,14 @@ function getFailString(x, y) {
   var count = 0;
   if (!isNumber(x)) {
     count++;
-    output += x;
+    output += getTrimmedString(x);
   }
   if (!isNumber(y)) {
     count++;
     if (count == 2) {
       output += ' and ';
     }
-    output += y;
+    output += getTrimmedString(y);
   }
   output += count == 1 ? ' is not a number.' : ' are not numbers.';
   return output;
@@ -36,4 +36,8 @@ function getComparisonString(x, y) {
   } else {
     return '<';
   }
+}
+
+function getTrimmedString(x) {
+  return String(x).trim();
 }
