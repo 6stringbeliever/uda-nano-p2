@@ -23,7 +23,7 @@ function alphabetizer(names) {
   for (var i = 0; i < names.length; i++) {
     output.push(reverseName(names[i]));
   }
-  return output;
+  return alphabetizeNames(output);
 }
 
  /*
@@ -35,4 +35,13 @@ function reverseName(name) {
   var nameArray = name.split(' ');
   return nameArray.length > 1 ? 
          nameArray.pop() + ', ' + nameArray.join(' ') : nameArray[0];
+}
+
+ /*
+  * Takes an array of names in Last, First format and returns the
+  * array of names alphabetized.
+  * @param names Array of names
+  */
+function alphabetizeNames(names) {
+  names.sort();
 }
