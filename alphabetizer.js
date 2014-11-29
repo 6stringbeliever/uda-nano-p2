@@ -43,5 +43,5 @@ function reverseName(name) {
   * @param names Array of names
   */
 function alphabetizeNames(names) {
-  names.sort();
+  return names.sort();
 }

@@ -40,7 +40,7 @@ function getFailString(x, y) {
     }
     output += getTrimmedString(y);
   }
-  output += count == 1 ? ' is not a number.' : ' are not numbers.';
+  output += count == 1 ? ' is not a number' : ' are not numbers';
   return output;
 }
 
