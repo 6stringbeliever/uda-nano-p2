@@ -1,19 +1,30 @@
-// Iterate through the localizedRuleNames in ruleResults and 
-// return an array of their strings.
+ /* 
+  * Iterate through the localizedRuleNames in ruleResults and 
+  * return an array of their strings.
+  * @param results Page insight object to iterate through
+  */
 function ruleList(results) {
-    var data = results.formattedResults.ruleResults;
-    var list = [];
-    for (var rule in data) {
-      console.log(rule);
-    }
+  var data = results.formattedResults.ruleResults;
+  var list = [];
+  for (var rule in data) {
+    list.push(getRuleName(data[rule]))
+  }
+  return list;
 }
 
+ /*
+  * Returns the localizedRuleName field of the passed object.
+  * @param obj Object to get rule name from
+  */
 function getRuleName(obj) {
-  
+  return obj.localizedRuleName;
 }
 
-// Iterate through pageStats in the psiResults object and 
-// return the total number of bytes to load the website.
+ /*
+  * Iterate through pageStats in the psiResults object and 
+  * return the total number of bytes to load the website.
+  * @param results Page insight object to iterate through
+  */
 function totalBytes(results) {
   var bytes = 0;
   var obj = results.pageStats;
@@ -32,6 +43,7 @@ function totalBytes(results) {
 function isResponseBytes(str) {
   return str.search(/Bytes$/) != -1;
 }
+
 // Below, you'll find a sample PS Insights JSON
 // and two console.log statements to help you test your code!
 
