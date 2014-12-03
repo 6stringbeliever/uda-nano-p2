@@ -1,13 +1,18 @@
 // Iterate through the localizedRuleNames in ruleResults and 
 // return an array of their strings.
 function ruleList(results) {
-    // Your code goes here!
+    var data = results.formattedResults.ruleResults;
+    var list = [];
+    for (var rule in data) {
+      console.log(rule);
+    }
 }
 
 // Iterate through pageStats in the psiResults object and 
 // return the total number of bytes to load the website.
 function totalBytes(results) {
   var bytes = 0;
+  var obj = results.pageStats;
   for (var x in obj) {
     if (isResponseBytes(x)) {
       bytes += Number(obj[x]);
@@ -16,8 +21,12 @@ function totalBytes(results) {
   return bytes;
 }
 
+ /*
+  * Returns true if the str param ends in 'ResponseBytes'.
+  * @param str String to evaluate
+  */
 function isResponseBytes(str) {
-  return str.toString().substr(-13, 13) === 'ResponseBytes';
+  return str.search(/Bytes/) != -1;
 }
 // Below, you'll find a sample PS Insights JSON
 // and two console.log statements to help you test your code!
