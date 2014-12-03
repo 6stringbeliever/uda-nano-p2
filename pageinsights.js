@@ -8,6 +8,10 @@ function ruleList(results) {
     }
 }
 
+function getRuleName(obj) {
+  
+}
+
 // Iterate through pageStats in the psiResults object and 
 // return the total number of bytes to load the website.
 function totalBytes(results) {
@@ -26,7 +30,7 @@ function totalBytes(results) {
   * @param str String to evaluate
   */
 function isResponseBytes(str) {
-  return str.search(/Bytes/) != -1;
+  return str.search(/Bytes$/) != -1;
 }
 // Below, you'll find a sample PS Insights JSON
 // and two console.log statements to help you test your code!
